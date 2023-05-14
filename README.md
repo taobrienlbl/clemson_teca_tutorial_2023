@@ -6,7 +6,7 @@ My main goal is that you come away from this tutorial inspired and enabled to us
 
 * apply existing TECA extremes detection tools to a climate dataset
 * write a custom TECA application using Python
-* describe the process involved in creating a new TECA algorithm find where to learn more
+* describe the process involved in creating a new TECA algorithm and find where to learn more
 
 ### How will I learn?
 
