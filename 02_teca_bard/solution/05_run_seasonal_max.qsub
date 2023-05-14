@@ -1,6 +1,6 @@
 #!/bin/bash
 ### Job Name
-#PBS -N teca_daily
+#PBS -N teca_yearly
 ### Project code
 #PBS -A UUIB0003 
 #PBS -l walltime=00:15:00
@@ -24,16 +24,16 @@ module use /glade/work/tobrien/software/cheyenne/install/superbuild/modulefiles/
 module load teca
 
 # create the output directory
-OUT_DIR=teca_bard_daily
+OUT_DIR=teca_bard_yearly
 mkdir -p $OUT_DIR
 
 ### Run teca_metadata_probe
 mpiexec_mpt teca_temporal_reduction \
-	--input_regex teca_bard_output/.*\.nc \
-	--interval daily \
-	--operator average \
-	--point_arrays ar_wgtd_PRECT ar_probability PRECT \
-	--output_file ${OUT_DIR}/teca_bard.b.e21.BHISTsmbb.f09_g17.LE2-1251.020.cam.h2.daily.%t%.nc \
+	--input_regex teca_bard_daily/.*\.nc \
+	--interval yearly \
+	--operator maximum \
+	--point_arrays ar_wgtd_PRECT ar_probability \
+	--output_file ${OUT_DIR}/teca_bard.b.e21.BHISTsmbb.f09_g17.LE2-1251.020.cam.h2.annualmax.%t%.nc \
 	--file_layout yearly \
 	--verbose 1
 
